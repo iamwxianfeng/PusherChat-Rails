@@ -1,5 +1,5 @@
 class ChatController < ApplicationController
-  
+
   def new
     chat = Chat.new
     chat.owner = ChatUser.user(session)
@@ -12,7 +12,6 @@ class ChatController < ApplicationController
   end
 
   def view
-    
     if(params[:id] != nil)
       @chat = Chat.find(Tiny::untiny(params[:id]))
       @user = ChatUser.user(session)
@@ -20,7 +19,7 @@ class ChatController < ApplicationController
     else
       redirect_to :controller => 'index', :action => 'index'
     end
-    
+
   end
 
 end
