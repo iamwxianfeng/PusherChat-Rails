@@ -1,19 +1,15 @@
 Getting started locally
 -----------------------
 
-    dependent lib version: ruby 1.9.2 + rails 3.0.3
+ruby 1.9.2 + rails 3.0.3
 
-    $ bundle install
+>bundle install
 
-Edit `config/database.yml` and then set up the database
+>rake db:create
 
-    $ rake db:setup
+config `config/initializers/pusher.rb`
 
-Add some Pusher credentials in `config/initializers/pusher.rb`
-
-Start the server
-
-    $ rails s
+>rails s
 
 Visit <http://localhost:3000/> in two browsers and start chatting.
 

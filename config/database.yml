@@ -23,19 +23,19 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: database_name
+  database: pusher_test
   pool: 5
-  username: user
-  password: pass
-  socket: /tmp/mysql.sock
+  username: root
+  password: root
+# socket: /tmp/mysql.sock
+  host: localhost
 
 production:
   encoding: unicode
-  adapter: postgresql
-  username: user
-  port: 0000
-  host: host
-  database: database
-  password: pass
+  adapter: mysql2
+  database: pusher_production
+  username: root
+  password: root
   pool: 0
   timeout: 5000
+  host: localhost
