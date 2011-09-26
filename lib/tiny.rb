@@ -21,7 +21,7 @@
 module Tiny
   TINY_SET   = "UbuegFAfy2waD5pRBz6L81IvjXcMr4OqxQESCnmTYZH0iNoVGsJ9P3kKhd7tlW"
   TINY_EPOCH = 1289943844
-  
+
   class << self
     def tiny(id)
       hex_n = ''
@@ -45,12 +45,12 @@ module Tiny
       end
       return n.to_s
     end
-    
+
     # Same as tiny() but use the current UNIX timestamp - TINY_EPOCH (hat tip: Nir Yariv)
     def tiny_from_timestamp
       tiny(Time.now.to_f - TINY_EPOCH)
     end
-    
+
     def generate_set
       base_set = ("a".."z").to_a + ("A".."Z").to_a + (0..9).to_a
       base_set = base_set.sort_by{ rand }.to_s
@@ -62,27 +62,27 @@ module Tiny
 end
 
 # Test
-Tiny::generate_set
-puts Tiny::tiny(-12345)
-puts Tiny::tiny(12345)
-puts Tiny::tiny(64)
-puts Tiny::tiny(1)
-puts Tiny::tiny(0)
-puts Tiny::untiny(Tiny::tiny(-12345))
-puts Tiny::untiny(Tiny::tiny(12345))
-puts Tiny::untiny(Tiny::tiny(64))
-puts Tiny::untiny(Tiny::tiny(1))
-puts Tiny::untiny(Tiny::tiny(0))
-
-time_now  = Time.now.to_i
-tiny_time = Tiny::tiny(time_now)
-puts "#{time_now} -> #{tiny_time} -> #{Tiny::untiny(tiny_time)}"
-
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
-puts Tiny::tiny_from_timestamp
+#Tiny::generate_set
+#puts Tiny::tiny(-12345)
+#puts Tiny::tiny(12345)
+#puts Tiny::tiny(64)
+#puts Tiny::tiny(1)
+#puts Tiny::tiny(0)
+#puts Tiny::untiny(Tiny::tiny(-12345))
+#puts Tiny::untiny(Tiny::tiny(12345))
+#puts Tiny::untiny(Tiny::tiny(64))
+#puts Tiny::untiny(Tiny::tiny(1))
+#puts Tiny::untiny(Tiny::tiny(0))
+#
+#time_now  = Time.now.to_i
+#tiny_time = Tiny::tiny(time_now)
+#puts "#{time_now} -> #{tiny_time} -> #{Tiny::untiny(tiny_time)}"
+#
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp
+#puts Tiny::tiny_from_timestamp

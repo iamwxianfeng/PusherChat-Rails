@@ -16,6 +16,10 @@ class ChatController < ApplicationController
       @chat = Chat.find(Tiny::untiny(params[:id]))
       @user = ChatUser.user(session)
       @messages = Message.find(:all, :conditions => ["chat_id = ?", @chat.id.to_s])
+      if params[:fr] == 'admin'
+        @chat.viewed = true
+        @chat.save
+      end
     else
       redirect_to :controller => 'index', :action => 'index'
     end
