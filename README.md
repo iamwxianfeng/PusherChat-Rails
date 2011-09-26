@@ -13,6 +13,12 @@ config `config/initializers/pusher.rb`
 
 Visit <http://localhost:3000/> in two browsers and start chatting.
 
+### Tips
+1) no such file to load -- crack/core_extensions (LoadError)
+because your crack gem is new , downgrade do version 0.1.8
+
+
+
 ### Debugging
 
 If something isn't working it's most likely the Pusher credentials:
