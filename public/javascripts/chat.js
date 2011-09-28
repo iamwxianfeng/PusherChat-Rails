@@ -190,7 +190,7 @@ $(document).ready(function()
   });
 
   // Cross browser placeholder shiz
-  var text = '输入你要咨询的问题...';
+  var text = '给服装顾问发送信息...';
   $('#message').focus(function() {
     if($(this).val() == text) {
       $(this).val("");
